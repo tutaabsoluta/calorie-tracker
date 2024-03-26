@@ -21,7 +21,7 @@ export default function Form({ dispatch, state }: FormProps) {
     // form state
     const [activity, setActivity] = useState<Activity>(initialState)
 
-
+    // Edit an activity
     useEffect(() => {
         if(state.activeId) {
             const selectedActivity = state.activities.filter((stateActivity) => 
@@ -42,7 +42,7 @@ export default function Form({ dispatch, state }: FormProps) {
         })
     }
 
-    // form validation
+    // form submit button validation
     const isValidActivity = () => {
         const { name, calories } = activity
         return name.trim() !== '' && calories > 0
